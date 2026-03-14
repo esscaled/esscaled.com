@@ -157,8 +157,19 @@ export default function TermsModal({ isOpen, onClose, mode, onAccept }: TermsMod
               <section>
                 <h3 className="text-lg font-semibold text-white mb-2">20. Contact Information</h3>
                 <p>If you have any questions about these Terms, please contact us at:</p>
-                <p className="mt-2"><strong>Email:</strong> <a href="mailto:StepanLebedev@agencystepanscaled.com" className="text-white underline hover:text-gray-300">StepanLebedev@agencystepanscaled.com</a></p>
-                <p><strong>Website:</strong> ESScaled.com</p>
+                <div className="mt-4 space-y-4">
+                  <div className="flex flex-col gap-1">
+                    <p className="font-medium text-white">Evan Vicino</p>
+                    <p>Email: <a href="mailto:evanvicino@esscaled.com" className="text-white underline hover:text-gray-300">evanvicino@esscaled.com</a></p>
+                    <p>Phone: <a href="tel:5082805346" className="text-white underline hover:text-gray-300">508-280-5346</a></p>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <p className="font-medium text-white">Stepan Lebedev</p>
+                    <p>Email: <a href="mailto:stepanlebedev@esscaled.com" className="text-white underline hover:text-gray-300">stepanlebedev@esscaled.com</a></p>
+                    <p>Phone: <a href="tel:5082747739" className="text-white underline hover:text-gray-300">508-274-7739</a></p>
+                  </div>
+                </div>
+                <p className="mt-4"><strong>Website:</strong> ESScaled.com</p>
               </section>
             </div>
 

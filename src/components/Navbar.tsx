@@ -33,14 +33,14 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop Layout: 3-column grid */}
-        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-8">
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-24">
           {/* Left Navigation */}
-          <div className="flex justify-end space-x-8">
+          <div className="flex justify-end space-x-12">
             {leftLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-all duration-300 text-sm font-medium tracking-wide hover:scale-105"
+                className="text-gray-300 hover:text-white transition-all duration-300 text-sm font-medium tracking-widest hover:scale-105 uppercase"
               >
                 {link.name}
               </a>
@@ -48,26 +48,31 @@ export default function Navbar() {
           </div>
 
           {/* Centered Logo */}
-          <div className="flex-shrink-0 flex items-center justify-center px-8">
-            <a href="/" className="transition-transform duration-300 hover:scale-105">
-              <img 
-                src="/esscaled_logo_transparent.png" 
-                alt="ESScaled" 
-                className="h-auto w-full max-w-[240px]" 
-              />
+          <div className="flex-shrink-0 flex items-center justify-center px-4">
+            <a href="/" className="flex flex-col items-center transition-transform duration-300 hover:scale-[1.02]">
+              <span className="text-3xl md:text-4xl font-light tracking-[0.35em] text-white uppercase leading-none">
+                ESSCALED
+              </span>
+              <div className="flex items-center w-full mt-3 gap-4">
+                <div className="h-[1px] flex-1 bg-white/20"></div>
+                <span className="text-[10px] font-light tracking-[0.2em] text-zinc-400 uppercase whitespace-nowrap">
+                  Marketing Agency
+                </span>
+                <div className="h-[1px] flex-1 bg-white/20"></div>
+              </div>
             </a>
           </div>
 
           {/* Right Navigation */}
-          <div className="flex justify-start items-center space-x-8">
+          <div className="flex justify-start items-center space-x-12">
             {rightLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 className={
                   link.name === "Contact"
-                    ? "bg-white hover:bg-gray-200 text-black px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] hover:scale-105"
-                    : "text-gray-300 hover:text-white transition-all duration-300 text-sm font-medium tracking-wide hover:scale-105"
+                    ? "bg-white hover:bg-gray-200 text-black px-8 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] hover:scale-105"
+                    : "text-gray-300 hover:text-white transition-all duration-300 text-sm font-medium tracking-widest hover:scale-105 uppercase"
                 }
               >
                 {link.name}
@@ -81,12 +86,17 @@ export default function Navbar() {
           <div className="w-10"></div> {/* Spacer for centering */}
           
           <div className="flex-shrink-0 flex items-center justify-center">
-            <a href="/">
-              <img 
-                src="/esscaled_logo_transparent.png" 
-                alt="ESScaled" 
-                className="h-auto w-full max-w-[160px]" 
-              />
+            <a href="/" className="flex flex-col items-center">
+              <span className="text-xl font-light tracking-[0.25em] text-white uppercase leading-none">
+                ESSCALED
+              </span>
+              <div className="flex items-center w-full mt-2 gap-2">
+                <div className="h-[1px] flex-1 bg-white/20"></div>
+                <span className="text-[8px] font-light tracking-[0.15em] text-zinc-400 uppercase whitespace-nowrap">
+                  Marketing Agency
+                </span>
+                <div className="h-[1px] flex-1 bg-white/20"></div>
+              </div>
             </a>
           </div>
 

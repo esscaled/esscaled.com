@@ -133,18 +133,18 @@ export default function Footer() {
                   </li>
                   <li>
                     <a
-                      href="tel:5082747739"
-                      className="text-sm leading-6 text-gray-400 hover:text-white transition-colors block"
-                    >
-                      508-274-7739
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="tel:5082805346"
                       className="text-sm leading-6 text-gray-400 hover:text-white transition-colors block"
                     >
                       508-280-5346
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="tel:5082747739"
+                      className="text-sm leading-6 text-gray-400 hover:text-white transition-colors block"
+                    >
+                      508-274-7739
                     </a>
                   </li>
                 </ul>

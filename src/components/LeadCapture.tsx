@@ -107,11 +107,11 @@ export default function LeadCapture() {
             <div className="flex flex-col items-center md:items-start">
               <span className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">Phone</span>
               <div className="flex flex-col items-center md:items-start gap-1">
-                <a href="tel:5082747739" className="hover:text-white transition-colors text-lg">
-                  508-274-7739
-                </a>
                 <a href="tel:5082805346" className="hover:text-white transition-colors text-lg">
                   508-280-5346
+                </a>
+                <a href="tel:5082747739" className="hover:text-white transition-colors text-lg">
+                  508-274-7739
                 </a>
               </div>
             </div>
