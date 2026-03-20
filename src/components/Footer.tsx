@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Instagram, Mail } from "lucide-react";
+import { Twitter, Facebook, Instagram, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -29,8 +29,8 @@ export default function Footer() {
                 href="#"
                 className="text-gray-500 hover:text-white transition-colors"
               >
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-6 w-6" aria-hidden="true" />
+                <span className="sr-only">Facebook</span>
+                <Facebook className="h-6 w-6" aria-hidden="true" />
               </a>
               <a
                 href="#"

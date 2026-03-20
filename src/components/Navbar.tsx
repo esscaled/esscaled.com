@@ -49,17 +49,13 @@ export default function Navbar() {
 
           {/* Centered Logo */}
           <div className="flex-shrink-0 flex items-center justify-center px-4">
-            <a href="/" className="flex flex-col items-center transition-transform duration-300 hover:scale-[1.02]">
-              <span className="text-3xl md:text-4xl font-light tracking-[0.35em] text-white uppercase leading-none">
-                ESSCALED
-              </span>
-              <div className="flex items-center w-full mt-3 gap-4">
-                <div className="h-[1px] flex-1 bg-white/20"></div>
-                <span className="text-[10px] font-light tracking-[0.2em] text-zinc-400 uppercase whitespace-nowrap">
-                  Marketing Agency
-                </span>
-                <div className="h-[1px] flex-1 bg-white/20"></div>
-              </div>
+            <a href="/" className="transition-transform duration-300 hover:scale-[1.02]">
+              <img 
+                src="/ESScaled logo.png" 
+                alt="ESScaled Marketing Agency" 
+                className="h-auto w-full max-w-[280px]" 
+                referrerPolicy="no-referrer"
+              />
             </a>
           </div>
 
@@ -86,17 +82,13 @@ export default function Navbar() {
           <div className="w-10"></div> {/* Spacer for centering */}
           
           <div className="flex-shrink-0 flex items-center justify-center">
-            <a href="/" className="flex flex-col items-center">
-              <span className="text-xl font-light tracking-[0.25em] text-white uppercase leading-none">
-                ESSCALED
-              </span>
-              <div className="flex items-center w-full mt-2 gap-2">
-                <div className="h-[1px] flex-1 bg-white/20"></div>
-                <span className="text-[8px] font-light tracking-[0.15em] text-zinc-400 uppercase whitespace-nowrap">
-                  Marketing Agency
-                </span>
-                <div className="h-[1px] flex-1 bg-white/20"></div>
-              </div>
+            <a href="/">
+              <img 
+                src="/ESScaled logo.png" 
+                alt="ESScaled Marketing Agency" 
+                className="h-auto w-full max-w-[200px]" 
+                referrerPolicy="no-referrer"
+              />
             </a>
           </div>
 

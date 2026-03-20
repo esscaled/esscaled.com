@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import StatsSection from "./components/StatsSection";
 import RoiCalculator from "./components/RoiCalculator";
 import Services from "./components/Services";
 import HowItWorks from "./components/HowItWorks";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <StatsSection />
         <RoiCalculator />
         <Services />
         <HowItWorks />
