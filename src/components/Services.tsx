@@ -4,6 +4,8 @@ import {
   LayoutTemplate,
   Megaphone,
   TrendingUp,
+  PenLine,
+  Bot,
   CheckCircle2,
 } from "lucide-react";
 
@@ -46,6 +48,32 @@ const services = [
       "Competitor analysis",
     ],
     cta: "Build a Strategy",
+  },
+  {
+    title: "Copywriting",
+    description:
+      "Words that sell. We write landing pages, email sequences, ad copy, and sales pages crafted to convert cold traffic into paying customers.",
+    icon: PenLine,
+    benefits: [
+      "Landing page & sales page copy",
+      "Email sequences that convert",
+      "Ad copy for Meta & Google",
+      "Brand voice development",
+    ],
+    cta: "Get Copy That Converts",
+  },
+  {
+    title: "AI Automation",
+    description:
+      "Automate the work that's eating your time. We build custom AI workflows for lead follow-up, client onboarding, and operations — without the overhead.",
+    icon: Bot,
+    benefits: [
+      "Lead nurturing & follow-up bots",
+      "Client onboarding automation",
+      "Custom AI workflows & integrations",
+      "CRM & process automation",
+    ],
+    cta: "Automate Your Business",
   },
 ];
 
@@ -118,66 +146,74 @@ export default function Services() {
           </motion.p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid grid-cols-1 gap-y-12 sm:gap-y-16 lg:max-w-none lg:grid-cols-3 lg:gap-x-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 28, filter: "blur(4px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: index * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-              >
-                <TiltCard className="flex flex-col h-full bg-zinc-900/30 border border-white/5 rounded-3xl p-6 sm:p-8 hover:bg-zinc-900/70 transition-colors duration-300 group">
-                  <dt className="flex items-center gap-x-4 text-xl font-semibold leading-7 text-white font-display mb-6">
-                    <motion.div
-                      whileHover={{ rotate: 8, scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                      className="h-14 w-14 flex items-center justify-center rounded-2xl bg-white/5 text-zinc-300 group-hover:bg-white group-hover:text-black transition-colors duration-300 shrink-0"
-                    >
-                      <service.icon className="h-7 w-7" aria-hidden="true" />
-                    </motion.div>
-                    {service.title}
-                  </dt>
-                  <dd className="mt-2 flex flex-auto flex-col text-base leading-7 text-gray-400">
-                    <p className="flex-auto mb-8 font-light leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    <ul className="space-y-4 mb-10">
-                      {service.benefits.map((benefit, bi) => (
-                        <motion.li
-                          key={benefit}
-                          initial={{ opacity: 0, x: -8 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.4, delay: index * 0.12 + bi * 0.07 }}
-                          className="flex items-start gap-3 text-sm text-gray-300"
-                        >
-                          <CheckCircle2 className="h-5 w-5 text-zinc-500 shrink-0 mt-0.5" />
-                          {benefit}
-                        </motion.li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-auto">
-                      <motion.a
-                        href="#contact"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.97 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                        className="inline-flex w-full justify-center items-center gap-2 rounded-xl bg-white/5 px-6 py-4 text-base font-semibold text-white hover:bg-white hover:text-black border border-white/10 transition-colors duration-300 btn-large cursor-pointer"
-                      >
-                        {service.cta}
-                      </motion.a>
-                    </div>
-                  </dd>
-                </TiltCard>
-              </motion.div>
+        <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 space-y-8">
+          {/* Row 1 — 3 cards */}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {services.slice(0, 3).map((service, index) => (
+              <ServiceCard key={service.title} service={service} index={index} />
             ))}
-          </dl>
+          </div>
+          {/* Row 2 — 2 cards centered */}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:max-w-3xl lg:mx-auto">
+            {services.slice(3).map((service, index) => (
+              <ServiceCard key={service.title} service={service} index={index + 3} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 28, filter: "blur(4px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.55, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+    >
+      <TiltCard className="flex flex-col h-full bg-zinc-900/30 border border-white/5 rounded-3xl p-6 sm:p-8 hover:bg-zinc-900/70 transition-colors duration-300 group">
+        <dt className="flex items-center gap-x-4 text-xl font-semibold leading-7 text-white font-display mb-6">
+          <motion.div
+            whileHover={{ rotate: 8, scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            className="h-14 w-14 flex items-center justify-center rounded-2xl bg-white/5 text-zinc-300 group-hover:bg-white group-hover:text-black transition-colors duration-300 shrink-0"
+          >
+            <service.icon className="h-7 w-7" aria-hidden="true" />
+          </motion.div>
+          {service.title}
+        </dt>
+        <dd className="mt-2 flex flex-auto flex-col text-base leading-7 text-gray-400">
+          <p className="flex-auto mb-8 font-light leading-relaxed">{service.description}</p>
+          <ul className="space-y-4 mb-10">
+            {service.benefits.map((benefit, bi) => (
+              <motion.li
+                key={benefit}
+                initial={{ opacity: 0, x: -8 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 + bi * 0.07 }}
+                className="flex items-start gap-3 text-sm text-gray-300"
+              >
+                <CheckCircle2 className="h-5 w-5 text-zinc-500 shrink-0 mt-0.5" />
+                {benefit}
+              </motion.li>
+            ))}
+          </ul>
+          <div className="mt-auto">
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              className="inline-flex w-full justify-center items-center gap-2 rounded-xl bg-white/5 px-6 py-4 text-base font-semibold text-white hover:bg-white hover:text-black border border-white/10 transition-colors duration-300 btn-large cursor-pointer"
+            >
+              {service.cta}
+            </motion.a>
+          </div>
+        </dd>
+      </TiltCard>
+    </motion.div>
   );
 }
