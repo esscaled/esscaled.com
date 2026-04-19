@@ -40,9 +40,10 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-all duration-300 text-sm font-medium tracking-widest hover:scale-105 uppercase"
+                className="relative text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-widest uppercase group"
               >
                 {link.name}
+                <span className="absolute -bottom-0.5 left-0 h-px w-full bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </a>
             ))}
           </div>
@@ -62,17 +63,27 @@ export default function Navbar() {
           {/* Right Navigation */}
           <div className="flex justify-start items-center space-x-12">
             {rightLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={
-                  link.name === "Contact"
-                    ? "bg-white hover:bg-gray-200 text-black px-8 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] hover:scale-105"
-                    : "text-gray-300 hover:text-white transition-all duration-300 text-sm font-medium tracking-widest hover:scale-105 uppercase"
-                }
-              >
-                {link.name}
-              </a>
+              link.name === "Contact" ? (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  whileHover={{ scale: 1.05, y: -1 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="bg-white text-black px-8 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_28px_rgba(255,255,255,0.25)] hover:bg-gray-100 transition-colors duration-200 cursor-pointer"
+                >
+                  {link.name}
+                </motion.a>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="relative text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-widest uppercase group"
+                >
+                  {link.name}
+                  <span className="absolute -bottom-0.5 left-0 h-px w-full bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                </a>
+              )
             ))}
           </div>
         </div>
